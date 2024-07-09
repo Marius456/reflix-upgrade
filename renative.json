@@ -2,11 +2,6 @@
   "$schema": ".rnv/schema/rnv.project.json",
   "platforms": {},
   "plugins": {
-    "@react-native-community/cli-platform-ios": "source:rnv",
-    "@react-native-community/cli": "source:rnv",
-    "react-native-tvos": "source:rnv",
-    "react-native-web": "source:rnv",
-    "next": "source:rnv",
     "bootstrap": "^5.3.0",
     "firebase": "^9.22.2",
     "react": "18.2.0",
@@ -114,8 +109,6 @@
   "projectName": "reflix",
   "workspaceID": "rnv",
   "defaults": {
-    "title": "Hello Renative",
-    "id": "com.academy.reflix",
     "supportedPlatforms": [
       "ios",
       "android",
@@ -138,11 +131,10 @@
     ]
   },
   "engines": {},
-  "templates": {
+  "templateConfig": {
     "@rnv/template-starter": {
       "version": "1.0.0"
     }
   },
-  "currentTemplate": "@rnv/template-starter",
   "isMonorepo": false
 }
