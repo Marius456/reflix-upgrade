@@ -1,0 +1,147 @@
+{
+  "platforms": {},
+  "plugins": {
+    "@react-native-community/cli-platform-ios": "source:rnv",
+    "@react-native-community/cli": "source:rnv",
+    "react-native-tvos": "source:rnv",
+    "react-native-web": "source:rnv",
+    "next": "source:rnv",
+    "bootstrap": "^5.3.0",
+    "firebase": "^9.22.2",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-firebaseui": "^6.0.0",
+    "@react-native-firebase/app": {
+      "version": "16.7.0",
+      "ios": {
+        "isStatic": true,
+        "podName": "RNFBApp"
+      },
+      "android": {
+        "package": "io.invertase.firebase.app.ReactNativeFirebaseAppPackage",
+        "projectName": "@react-native-firebase_app",
+        "build.gradle": {
+          "buildscript": {
+            "dependencies": ["classpath 'com.google.gms:google-services:4.2.0'"]
+          }
+        },
+        "app/build.gradle": {
+          "apply": ["plugin: 'com.google.gms.google-services'"]
+        }
+      },
+      "androidtv": {
+        "package": "io.invertase.firebase.app.ReactNativeFirebaseAppPackage",
+        "projectName": "@react-native-firebase_app",
+        "build.gradle": {
+          "buildscript": {
+            "dependencies": ["classpath 'com.google.gms:google-services:4.2.0'"]
+          }
+        },
+        "app/build.gradle": {
+          "apply": ["plugin: 'com.google.gms.google-services'"]
+        }
+      }
+    },
+    "@react-native-firebase/auth": {
+      "version": "16.7.0",
+      "dependsOn": ["@react-native-firebase/app"],
+      "ios": {
+        "isStatic": true,
+        "podName": "RNFBAuth",
+        "xcodeproj": {
+          "resourceFiles": ["RNVApp/GoogleService-Info.plist"]
+        },
+        "appDelegateImports": ["Firebase"],
+        "appDelegateMethods": {
+          "application": {
+            "didFinishLaunchingWithOptions": [
+              "FirebaseApp.configure()",
+              "let userDefaults = UserDefaults.standard",
+              "if !userDefaults.bool(forKey: \"hasRunBefore\") {",
+              "do { try Auth.auth().signOut() } catch { }",
+              "userDefaults.set(true, forKey: \"hasRunBefore\")",
+              "userDefaults.synchronize()",
+              "}"
+            ]
+          }
+        }
+      },
+      "android": {
+        "package": "io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage",
+        "projectName": "@react-native-firebase_auth"
+      },
+      "androidtv": {
+        "package": "io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage",
+        "projectName": "@react-native-firebase_auth"
+      }
+    },
+    "@react-native-firebase/firestore": {
+      "version": "16.7.0",
+      "dependsOn": ["@react-native-firebase/app"],
+      "path": "node_modules/@react-native-firebase/firestore",
+      "ios": {
+        "isStatic": true,
+        "podName": "RNFBFirestore",
+        "xcodeproj": {
+          "resourceFiles": ["RNVApp/GoogleService-Info.plist"]
+        },
+        "appDelegateImports": ["Firebase"],
+        "appDelegateMethods": {
+          "application": {
+            "didFinishLaunchingWithOptions": ["FirebaseApp.configure()"]
+          }
+        }
+      },
+      "android": {
+        "package": "io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage",
+        "projectName": "@react-native-firebase_firestore"
+      },
+      "androidtv": {
+        "package": "io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage",
+        "projectName": "@react-native-firebase_firestore"
+      }
+    },
+    "@react-navigation": "source:rnv",
+    "react-native-safe-area-context": "source:rnv",
+    "react-native-screens": "source:rnv",
+    "react-native-video": "source:rnv",
+    "react-native-linear-gradient": "source:rnv"
+  },
+  "extendsTemplate": "@rnv/template-starter/renative.json",
+  "projectName": "reflix",
+  "workspaceID": "rnv",
+  "defaults": {
+    "title": "Hello Renative",
+    "id": "com.academy.reflix",
+    "supportedPlatforms": [
+      "ios",
+      "android",
+      "androidtv",
+      "firetv",
+      "androidwear",
+      "web",
+      "webtv",
+      "tizen",
+      "tvos",
+      "webos",
+      "macos",
+      "windows",
+      "tizenwatch",
+      "tizenmobile",
+      "kaios",
+      "firefoxos",
+      "firefoxtv",
+      "chromecast"
+    ]
+  },
+  "engines": {},
+  "templates": {
+    "@rnv/template-starter": {
+      "version": "0.37.1"
+    }
+  },
+  "currentTemplate": "@rnv/template-starter",
+  "isMonorepo": false
+}
