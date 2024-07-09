@@ -1,4 +1,5 @@
 {
+  "$schema": ".rnv/schema/rnv.project.json",
   "platforms": {},
   "plugins": {
     "@react-native-community/cli-platform-ios": "source:rnv",
@@ -139,7 +140,7 @@
   "engines": {},
   "templates": {
     "@rnv/template-starter": {
-      "version": "0.37.1"
+      "version": "1.0.0"
     }
   },
   "currentTemplate": "@rnv/template-starter",
