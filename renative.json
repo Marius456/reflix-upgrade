@@ -49,18 +49,20 @@
         "xcodeproj": {
           "resourceFiles": ["RNVApp/GoogleService-Info.plist"]
         },
-        "appDelegateImports": ["Firebase"],
-        "appDelegateMethods": {
-          "application": {
-            "didFinishLaunchingWithOptions": [
-              "FirebaseApp.configure()",
-              "let userDefaults = UserDefaults.standard",
-              "if !userDefaults.bool(forKey: \"hasRunBefore\") {",
-              "do { try Auth.auth().signOut() } catch { }",
-              "userDefaults.set(true, forKey: \"hasRunBefore\")",
-              "userDefaults.synchronize()",
-              "}"
-            ]
+        "templateXcode": {
+          "appDelegateImports": ["Firebase"],
+          "appDelegateMethods": {
+            "application": {
+              "didFinishLaunchingWithOptions": [
+                "FirebaseApp.configure()",
+                "let userDefaults = UserDefaults.standard",
+                "if !userDefaults.bool(forKey: \"hasRunBefore\") {",
+                "do { try Auth.auth().signOut() } catch { }",
+                "userDefaults.set(true, forKey: \"hasRunBefore\")",
+                "userDefaults.synchronize()",
+                "}"
+              ]
+            }
           }
         }
       },
@@ -83,10 +85,12 @@
         "xcodeproj": {
           "resourceFiles": ["RNVApp/GoogleService-Info.plist"]
         },
-        "appDelegateImports": ["Firebase"],
-        "appDelegateMethods": {
-          "application": {
-            "didFinishLaunchingWithOptions": ["FirebaseApp.configure()"]
+        "templateXcode": {
+          "appDelegateImports": ["Firebase"],
+          "appDelegateMethods": {
+            "application": {
+              "didFinishLaunchingWithOptions": ["FirebaseApp.configure()"]
+            }
           }
         }
       },
