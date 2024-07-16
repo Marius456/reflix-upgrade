@@ -17,6 +17,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "platformBuilds\\app_web\\output/types/**/*.ts"
+    "platformBuilds\\app_web\\output/types/**/*.ts",
+    "platformBuilds/app_web/output/types/**/*.ts"
   ]
 }
